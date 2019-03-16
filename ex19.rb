@@ -1,0 +1,10 @@
+def cheese_and_creackers(cheese_count, boxes_of_crackers)
+    puts "You have #{cheese_count} cheeses!"
+    puts "You have #{boxes_of_crackers} boxes of crackers!"
+    puts "Man that's enough for a party!"
+    puts "Get a blanket.\n"
+end
+
+puts "We can just give the function numbers directly:"
+cheese_and_creackers(20, 30)
+
