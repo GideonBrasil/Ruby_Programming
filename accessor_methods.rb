@@ -49,7 +49,8 @@ sparky.change_info('Spartacus', '4', '45 lbs')
 puts sparky.info
 
 class MyCar
-    # attr_accessor :year, :color, :model
+    attr_accessor :color
+    attr_reader :year
 
     def initialize(y, c, m)
         @year = y
@@ -76,9 +77,14 @@ class MyCar
         @current_speed = 0
         puts "Let's park the car!"
     end
+
+    def spray_paint(color)
+        self.color = color
+        puts "Your new car color is #{color}."
+    end
 end
 
-gideonCar = MyCar.new('2007', 'Honda Civic', 'Silver')
+gideonCar = MyCar.new('2007', 'Silver', 'Honda Civic')
 gideonCar.speed_up(100)
 gideonCar.current_speed
 gideonCar.speed_up(20)
@@ -89,3 +95,8 @@ gideonCar.speed_down(80)
 gideonCar.current_speed
 gideonCar.shut_down
 gideonCar.current_speed
+
+puts "Your current car year is #{gideonCar.year}, and color is #{gideonCar.color}" 
+gideonCar.spray_paint('black')
+# puts gideonCar.color
+puts gideonCar.year
