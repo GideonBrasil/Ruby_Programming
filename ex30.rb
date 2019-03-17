@@ -1,5 +1,5 @@
 people = 30
-cars = 40
+cars = 10
 trucks = 15
 
 if cars > people
@@ -18,7 +18,7 @@ else
     puts "We still can't decide."
 end
 
-if people > trucks
+if people > trucks || trucks < cars
     puts "Alright, let's just take the trucks."
 elsif
     puts "Fine, let's stay home then."
