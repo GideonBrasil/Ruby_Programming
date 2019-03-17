@@ -39,3 +39,6 @@ puts !("testing" == "testing" && "Zed" == "Cool Guy")
 puts 1 == 1 && (!("testing" == 1 || 1 == 0))
 puts "chunky" == "bacon" && (!(3 == 4 || 3 == 3))
 puts 3 == 3 && (!("testing" == "testing" || "Ruby" == "Fun"))
+
+# true && !(true || true) => true && false = false
+3 != 4 && !("testing" != "test" || "Ruby" == "Ruby")
