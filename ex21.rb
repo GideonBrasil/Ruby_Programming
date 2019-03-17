@@ -35,3 +35,5 @@ puts "Here is a puzzle."
 what = add(age, subtract(height, multiply(weight, divide(iq, 2))))
 
 puts "That becomes: #{what}. Can you do that by hand?"
+
+puts 24 + 34 / 100 - 1023
