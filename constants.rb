@@ -1,5 +1,5 @@
 class GoodDog
-    DOG_YEARS = 7
+    DOG_YEARS = 7 #  make entire constant name uppercase
 
     attr_accessor :name, :age
 
