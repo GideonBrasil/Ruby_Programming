@@ -49,12 +49,43 @@ sparky.change_info('Spartacus', '4', '45 lbs')
 puts sparky.info
 
 class MyCar
-    attr_accessor :year, :color, :model
+    # attr_accessor :year, :color, :model
 
-    def car_info(y, c, m)
+    def initialize(y, c, m)
         @year = y
         @color = c
         @model = m
         @current_speed = 0
     end
 
+    def speed_up(speed)
+        @current_speed += speed
+        puts "You push the gas to accelerate #{speed} km/h."
+    end
+
+    def speed_down(speed)
+        @current_speed -= speed
+        puts "You push the brakes to decelerate #{speed} km/h."
+    end
+
+    def current_speed
+        puts "You are now going #{@current_speed} kmh."
+    end
+
+    def shut_down
+        @current_speed = 0
+        puts "Let's park the car!"
+    end
+end
+
+gideonCar = MyCar.new('2007', 'Honda Civic', 'Silver')
+gideonCar.speed_up(100)
+gideonCar.current_speed
+gideonCar.speed_up(20)
+gideonCar.current_speed
+gideonCar.speed_down(40)
+gideonCar.current_speed
+gideonCar.speed_down(80)
+gideonCar.current_speed
+gideonCar.shut_down
+gideonCar.current_speed
