@@ -15,11 +15,11 @@ numbers = []
 
 puts start_array_number
 
-while start_array_number < end_array_number
+(start_array_number..end_array_number).each do |start_array_number|
     puts "At the top i is #{start_array_number}"
     numbers.push(start_array_number)
 
-    start_array_number += increment_array
+    
     puts "Numbers now: ", numbers
     puts "At the bottom i is #{start_array_number}"
 end
