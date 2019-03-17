@@ -4,9 +4,12 @@ start_array_number = $stdin.gets.chomp.to_i
 print "Pick an ending number for the array: "
 end_array_number = $stdin.gets.chomp.to_i
 
+print "How much do you want to increment the numbers in your array by? "
+increment_array = $stdin.gets.chomp.to_i
+
 puts "The numbers you picked were #{start_array_number}, #{end_array_number}"
 
-def loop_array(start_array_number, end_array_number)
+def loop_array(start_array_number, end_array_number, increment_array)
 
 numbers = []
 
@@ -16,7 +19,7 @@ while start_array_number < end_array_number
     puts "At the top i is #{start_array_number}"
     numbers.push(start_array_number)
 
-    start_array_number += 1
+    start_array_number += increment_array
     puts "Numbers now: ", numbers
     puts "At the bottom i is #{start_array_number}"
 end
@@ -28,4 +31,4 @@ numbers.each {|num| puts num }
 
 end
 
-loop_array(start_array_number, end_array_number)
+loop_array(start_array_number, end_array_number, increment_array)
