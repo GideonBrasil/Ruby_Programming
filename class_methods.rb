@@ -8,6 +8,4 @@ class GoodDog
     puts what_am_i
 end
 
-
-
 puts GoodDog.what_am_i
