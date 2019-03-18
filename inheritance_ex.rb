@@ -1,3 +1,9 @@
+module Towable
+    def can_tow?(pounds)
+        pounds < 2000 ? true : false
+    end
+end
+
 class Vehicle
     @@number_of_vehicles = 0
 
@@ -15,6 +21,7 @@ class Vehicle
 end
   
 class MyCar < Vehicle
+    include Towable
     NUMBER_OF_DOORS = 4
     attr_accessor :color
     attr_reader :year, :model
@@ -57,6 +64,7 @@ class MyCar < Vehicle
 end
   
 class MyTruck < Vehicle
+    include Towable
     NUMBER_OF_DOORS = 2
 end
 
@@ -79,3 +87,5 @@ puts gideonCar.year
 gideonCar.gas_mileage(20, 402)
 
 # puts gideonCar
+
+puts gideonCar.can_tow?(1200)
