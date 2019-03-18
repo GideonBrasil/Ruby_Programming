@@ -50,6 +50,16 @@ class Vehicle
         self.color = color
         puts "Your new car color is #{color}."
     end
+
+    def age
+        "Your #{self.model} is #{years_old} years old."
+    end
+    
+    private
+    
+    def years_old
+        Time.now.year - self.year
+    end
 end
   
 class MyCar < Vehicle
@@ -71,7 +81,7 @@ class MyTruck < Vehicle
     end
 end
 
-gideonCar = MyCar.new('2007', 'Silver', 'Honda Civic')
+gideonCar = MyCar.new(2007, 'Silver', 'Honda Civic')
 gideonCar.speed_up(100)
 gideonCar.current_speed
 gideonCar.speed_up(20)
@@ -97,3 +107,6 @@ puts "---Method Lookup---"
 puts MyCar.ancestors
 puts MyTruck.ancestors
 puts Vehicle.ancestors
+
+puts "---Method Age---"
+puts gideonCar.age
