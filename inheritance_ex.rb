@@ -5,32 +5,26 @@ module Towable
 end
 
 class Vehicle
-    @@number_of_vehicles = 0
-
-    def self.number_of_vehicles
-      puts "This program has created #{@@number_of_vehicles} vehicles"
-    end
-  
-    def initialize
-      @@number_of_vehicles += 1
-    end
-    # Add a class method to your MyCar class that calculates the gas mileage of any car.
-    def gas_mileage(liters, km)
-        puts "#{km / liters} kms per liter of gas."
-    end
-end
-  
-class MyCar < Vehicle
-    include Towable
-    NUMBER_OF_DOORS = 4
     attr_accessor :color
     attr_reader :year, :model
+    @@number_of_vehicles = 0
+
 
     def initialize(y, c, m)
         @year = y
         @color = c
         @model = m
         @current_speed = 0
+        @@number_of_vehicles += 1
+    end
+
+    def self.number_of_vehicles
+      puts "This program has created #{@@number_of_vehicles} vehicles"
+    end
+  
+    # Add a class method to your MyCar class that calculates the gas mileage of any car.
+    def gas_mileage(liters, km)
+        puts "#{km / liters} kms per liter of gas."
     end
 
     def speed_up(speed)
@@ -56,16 +50,25 @@ class MyCar < Vehicle
         self.color = color
         puts "Your new car color is #{color}."
     end
+end
+  
+class MyCar < Vehicle
+    include Towable
+    NUMBER_OF_DOORS = 4
 
     # Override the to_s method to create a user friendly print out of your object.
     def to_s
-        puts "Your car is a #{model}, from #{year} and the color is #{color}."
+        puts "Your car is a #{self.model}, from #{self.year} and the color is #{self.color}."
     end
 end
   
 class MyTruck < Vehicle
     include Towable
     NUMBER_OF_DOORS = 2
+
+    def to_s
+        puts "Your truck is a #{self.model}, from #{self.year} and the color is #{self.color}."
+    end
 end
 
 gideonCar = MyCar.new('2007', 'Silver', 'Honda Civic')
@@ -89,3 +92,8 @@ gideonCar.gas_mileage(20, 402)
 # puts gideonCar
 
 puts gideonCar.can_tow?(1200)
+
+puts "---Method Lookup---"
+puts MyCar.ancestors
+puts MyTruck.ancestors
+puts Vehicle.ancestors
