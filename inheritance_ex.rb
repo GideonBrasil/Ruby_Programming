@@ -1,4 +1,13 @@
 class Vehicle
+    @@number_of_vehicles = 0
+
+    def self.number_of_vehicles
+      puts "This program has created #{@@number_of_vehicles} vehicles"
+    end
+  
+    def initialize
+      @@number_of_vehicles += 1
+    end
     # Add a class method to your MyCar class that calculates the gas mileage of any car.
     def gas_mileage(liters, km)
         puts "#{km / liters} kms per liter of gas."
