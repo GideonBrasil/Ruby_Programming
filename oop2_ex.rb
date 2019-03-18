@@ -66,12 +66,12 @@ puts gideonCar
 
 
 # fix the following code
-# class Person
-#     attr_reader :name
-#     def initialize(name)
-#         @name = name
-#     end
-# end
+class Person
+    attr_accessor :name
+    def initialize(name)
+        @name = name
+    end
+end
 
-# bob = Person.new('Steve')
-# puts bob.name = 'Bob'
+bob = Person.new('Steve')
+puts bob.name = 'Bob'
