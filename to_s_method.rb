@@ -15,3 +15,6 @@ end
 
 sparky = GoodDog.new('Sparky', 7)
 puts sparky
+
+p sparky
+puts "#{sparky}"
