@@ -1,6 +1,6 @@
 class MyCar
     attr_accessor :color
-    attr_reader :year
+    attr_reader :year, :model
 
     def initialize(y, c, m)
         @year = y
@@ -37,6 +37,11 @@ class MyCar
     def gas_mileage(liters, km)
         puts "#{km / liters} kms per liter of gas."
     end
+
+    # Override the to_s method to create a user friendly print out of your object.
+    def to_s
+        puts "Your car is a #{model}, from #{year} and the color is #{color}."
+    end
 end
 
 gideonCar = MyCar.new('2007', 'Silver', 'Honda Civic')
@@ -57,25 +62,16 @@ gideonCar.spray_paint('black')
 puts gideonCar.year
 gideonCar.gas_mileage(20, 402)
 
+puts gideonCar
 
-# Override the to_s method to create a user friendly print out of your object.
-class GoodDog
-    DOG_YEARS = 7
 
-    attr_accessor :name, :age
+# fix the following code
+# class Person
+#     attr_reader :name
+#     def initialize(name)
+#         @name = name
+#     end
+# end
 
-    def initialize(n, a)
-        @name = n
-        @age = a * DOG_YEARS
-    end
-
-    def to_s
-        "This dog's name is #{name} and it is #{age} in dog years."
-    end
-end
-
-sparky = GoodDog.new('Sparky', 7)
-puts sparky
-
-p sparky
-puts "#{sparky}"
+# bob = Person.new('Steve')
+# puts bob.name = 'Bob'
